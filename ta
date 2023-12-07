@@ -1,0 +1,13 @@
+            newCollage.texts.removeAll(where: { $0.id == id })
+            
+        case .removeSticker(let id):
+            newCollage.stickers.removeAll(where: { $0.id == id })
+        }
+        
+        return newCollage
+        
+    }
+    
+    private mutating func changeShape(_ action: ShapeModification,
+                                      id: String,
+                                      in collage: Collage) -> Collage {
